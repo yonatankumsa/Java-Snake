@@ -6,8 +6,8 @@ import java.util.Random;
 public class GamePanel extends JPanel implements ActionListener{
 
 	static final int SCREEN_WIDTH = 1300;
-	static final int SCREEN_HEIGHT = 800;
-	static final int UNIT_SIZE = 50;
+	static final int SCREEN_HEIGHT = 700;
+	static final int UNIT_SIZE = 25;
 	static final int GAME_UNITS = (SCREEN_WIDTH*SCREEN_HEIGHT)/(UNIT_SIZE*UNIT_SIZE);
 	static final int DELAY = 79;
 	final int x[] = new int[GAME_UNITS];
@@ -135,6 +135,7 @@ public class GamePanel extends JPanel implements ActionListener{
 	}
 	public void gameOver(Graphics g) {
 		//Score
+		
 		g.setColor(Color.red);
 		g.setFont( new Font("Ink Free",Font.BOLD, 40));
 		FontMetrics metrics1 = getFontMetrics(g.getFont());
@@ -144,6 +145,8 @@ public class GamePanel extends JPanel implements ActionListener{
 		g.setFont( new Font("Ink Free",Font.BOLD, 75));
 		FontMetrics metrics2 = getFontMetrics(g.getFont());
 		g.drawString("Game Over", (SCREEN_WIDTH - metrics2.stringWidth("Game Over"))/2, SCREEN_HEIGHT/2);
+
+
 	}
 	@Override
 	public void actionPerformed(ActionEvent e) {
@@ -153,6 +156,7 @@ public class GamePanel extends JPanel implements ActionListener{
 			checkApple();
 			checkCollisions();
 		}
+		
 		repaint();
 	}
 	
